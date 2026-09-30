@@ -38,8 +38,6 @@ public class JwtService {
 
         Date now = new Date();
 
-        Date expiration = new Date();
-
         Date expiration = new Date(
                 now.getTime() + jwtProperties.getExpiration()
         );

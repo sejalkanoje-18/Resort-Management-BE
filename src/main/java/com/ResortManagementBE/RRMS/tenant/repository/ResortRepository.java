@@ -1,4 +1,7 @@
 package com.ResortManagementBE.RRMS.tenant.repository;
 
-public class ResortRepository {
+import com.ResortManagementBE.RRMS.tenant.entity.Resort;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ResortRepository extends JpaRepository<Resort, Long> {
 }

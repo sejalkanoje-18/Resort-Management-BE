@@ -1,4 +1,9 @@
 package com.ResortManagementBE.RRMS.auth.entity;
 
-public class Role {
+
+public enum Role {
+    SUPER_ADMIN,
+    OWNER,
+    MANAGEMENT,
+    STAFF
 }

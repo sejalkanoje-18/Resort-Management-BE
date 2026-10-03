@@ -5,9 +5,9 @@ import com.ResortManagementBE.RRMS.auth.dto.response.AuthResponse;
 import com.ResortManagementBE.RRMS.security.jwt.JwtService;
 import com.ResortManagementBE.RRMS.security.principal.CustomUserPrincipal;
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,8 +31,10 @@ public class AuthService {
 
         return new AuthResponse(
                 token,
+                principal.getUserId(),
                 principal.getUsername(),
-                principal.getUser().getRole().name()
+                principal.getRole(),
+                principal.getTenantId()
         );
     }
 

@@ -3,15 +3,17 @@ package com.ResortManagementBE.RRMS.security.principal;
 import com.ResortManagementBE.RRMS.auth.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.management.relation.Relation;
 import java.util.Collection;
 import java.util.List;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CustomUserPrincipal implements UserDetails {
 
     private final Long userId;
@@ -19,6 +21,7 @@ public class CustomUserPrincipal implements UserDetails {
     private final String password;
     private final Role role;
     private final Long tenantId;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -44,4 +47,5 @@ public class CustomUserPrincipal implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }
